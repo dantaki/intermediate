@@ -12,6 +12,7 @@ Imports: ggplot2,
          plotly,
          htmlwidgets,
          testthat
+Suggests: AnnotationHub
 License: GPL-3
 LazyData: TRUE
 URL: https://github.com/churchill-lab/intermediate
