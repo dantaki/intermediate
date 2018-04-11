@@ -11,9 +11,7 @@ Imports: ggplot2,
          dplyr,
          plotly,
          htmlwidgets,
-         testthat,
-         qtl2db,
-         AnnotationHub
+         testthat
 License: GPL-3
 LazyData: TRUE
 URL: https://github.com/churchill-lab/intermediate
