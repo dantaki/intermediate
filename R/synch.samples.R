@@ -10,11 +10,11 @@
 #' 
 #' @return list with three elements: pheno, probs, expr and covar. Sample IDs will all be in the same order.
 #' @export
-synch.samples = function(pheno, probs, expr, covar) {
+synch.samples = function(pheno, probs, expr, covar=NULL) {
   
   samples = intersect(rownames(pheno), rownames(probs))
   samples = intersect(samples, rownames(expr))
-  if(!missing(covar)) {
+  if(!is.null(covar)) {
     samples = intersect(samples, rownames(covar))
   }
   
