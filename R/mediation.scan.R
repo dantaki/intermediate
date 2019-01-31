@@ -71,7 +71,7 @@ mediation.scan <- function(target,
   # data preparation
   mediator <- cbind(mediator) # to ensure 'mediator' is a matrix
   N <- ncol(mediator) # number of points to scan
-  if (is.null(covar)) covar <- cbind(rep(1, N)) # if no covariates, use just intercept
+  if (is.null(covar)) covar <- cbind(rep(1, length(covar))) # if no covariates, use just intercept
   LOD <- rep(NA, N) # prepare output
 
   if (method == "double-lod-diff") {
