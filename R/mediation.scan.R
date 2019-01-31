@@ -54,15 +54,19 @@ mediation.scan <- function(target,
   stopifnot(NROW(target) == NROW(mediator))
   stopifnot(NROW(annotation) == NCOL(mediator))
   stopifnot(NROW(qtl.geno) == NROW(target))
-  stopifnot(is.null(covar) | NROW(target) == NROW(covar))
-  stopifnot(!any(is.na(covar)))
   stopifnot(!any(is.na(qtl.geno)))
   stopifnot(all(is.numeric(target[,1])))
   stopifnot(all(is.numeric(mediator)))
   stopifnot(all(is.numeric(qtl.geno)))
-  stopifnot(all(is.numeric(covar)))
   stopifnot(c("CHR", "MIDDLE_POINT") %in% toupper(names(annotation)))
   method = match.arg(method)
+
+  if (!is.null(covar)) {
+    stopifnot(NROW(target) == NROW(covar))
+    stopifnot(!any(is.na(covar)))
+    stopifnot(all(is.numeric(covar)))
+  }
+
 
   # data preparation
   mediator <- cbind(mediator) # to ensure 'mediator' is a matrix
