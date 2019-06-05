@@ -8,7 +8,7 @@ You can install `intermediate` directly from Github using `devtools` package:
 
 ```S
     # install.packages("devtools")
-    devtools::install_github("simecek/intermediate")
+    devtools::install_github("dantaki/intermediate")
 ```
 
 ## Example
